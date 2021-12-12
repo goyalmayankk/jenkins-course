@@ -17,6 +17,6 @@ job('NodeJS example') {
         
     }
     steps {
-        shell("echo $TestParam")
+        shell('echo $TestParam')
     }
 }
