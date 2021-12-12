@@ -12,6 +12,10 @@ job('NodeJS example') {
         nodejs('nodejs') // this is the name of the NodeJS installation in 
                          // Manage Jenkins -> Configure Tools -> NodeJS Installations -> Name
     }
+    parameters {
+        stringParam('TestParam', null, 'this is test parameter')
+        
+    }
     steps {
         shell("npm install")
     }
