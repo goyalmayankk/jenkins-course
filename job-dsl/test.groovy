@@ -6,11 +6,15 @@ job('DUP product lisitngs') {
         }
     }
     parameters {
-        stringParam('TestParam', '', 'this is test parameter')
+        stringParam('RHEL_ProductVersion', '', 'RHEL productversion name f.e RHEL-8.4.0.Z.EUS')
+        
+    }
+    parameters {
+        stringParam('Build_NVR', '', 'Build NVR for kmod-redhat package')
         
     }
     steps {
-        shell('echo $TestParam')
+        shell('echo python dud_prod.py --rhel-pv $RHEL_ProductVersion --build-nvr $Build_NVR')
         shell('date')
     }
 }
